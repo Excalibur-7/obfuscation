@@ -1,5 +1,6 @@
 # font obfuscation
 # 폰트 난독화
+<a href="https://myhits.vercel.app"><img src="https://myhits.vercel.app/api/hit/https%3A%2F%2Fgithub.com%2FExcalibur-7%2Fobfuscation?color=blue&label=hits&size=small" alt="hits" /></a>
 
 ### Via Bookmark (웹)
 1. 아래 [스크립트]를 복사하기 (우측 복사버튼)
