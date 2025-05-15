@@ -4,7 +4,7 @@
 ### Via Bookmark (웹)
 1. 아래 [스크립트]를 복사하기 (우측 복사버튼)
     ```javascript
-    javascript:(function(){fetch('https://raw.githubusercontent.com/yeorinhieut/novel-dl/main/script.js').then(response=>{if(!response.ok){throw new Error(`Failed to fetch script: ${response.statusText}`);}return response.text();}).then(scriptContent=>{const script=document.createElement('script');script.textContent=scriptContent;document.head.appendChild(script);console.log('Script loaded and executed.');}).catch(error=>{console.error(error);});})();
+    javascript:(function() {  fetch('https://excalibur-7.github.io/obfuscation/reversedlookup.json')    .then(res => res.json())    .then(lookupTable => {      function encodeChar(char) {        const codeHex = char.codePointAt(0).toString(16).padStart(4, '0');        const mapped = lookupTable[codeHex];        return mapped ? String.fromCodePoint(parseInt(mapped, 16)) : char;      }      function walk(node) {        if (node.nodeType === 3) {          node.nodeValue = node.nodeValue            .split(%27%27)            .map(encodeChar)            .join(%27%27);        } else {          for (let i = 0; i < node.childNodes.length; i++) {            walk(node.childNodes[i]);          }        }      }      document.querySelectorAll(%27#novel_content').forEach(el => walk(el));    });})();
     ```
 2. 브라우저에서, `ctrl+shift+b` 를 통해 북마크바 표시하기
 3. `ctrl+d` 를 통해 아무 페이지에서 북마크 추가
